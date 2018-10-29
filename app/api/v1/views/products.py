@@ -1,5 +1,5 @@
 from flask import Flask, Blueprint, jsonify, request
-# from app.api.v1.models.products import products_model
+# from app.api.v1.models.products import Product
 from app.api.v1.models.store_model import Store
 products = Blueprint('products', __name__)
 
