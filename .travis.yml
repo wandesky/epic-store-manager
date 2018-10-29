@@ -1,17 +1,14 @@
 language: python
 python:
-  - "3.6"
+  - "3.6.1"
+notifications:
+  email: false
+# command to install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install coveralls
-  - pip install nose
-  - pip install codeclimate-test-reporter
-
+# command to run tests
 script:
-  # - py.test --cov=app/tests/v1
-  # - nosetests --with-coverage --cover-package=app && coverage report
-  - nosetests
-
-after-success:
-- coveralls
-- codeclimate-test-reporter
+  # - pytest test.py # or py.test for Python versions 3.5 and below
+  - nosetests --with-coverage
+after_success:
+  - coveralls
