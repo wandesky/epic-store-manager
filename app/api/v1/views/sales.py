@@ -11,7 +11,7 @@ def hello():
 def get_all_sales():
     store = Store()
     print('All sales: ', jsonify(store.get_all_sales()))
-    return jsonify(store.get_all_products())
+    return jsonify(store.get_all_sales())
 
 @sales.route('/sales', methods = ['POST'])
 def post_sale():
