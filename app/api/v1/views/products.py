@@ -10,5 +10,4 @@ def welcome():
 @products.route('/products', methods = ['GET'])
 def get_all_products():
     store = Store()
-    print('All products: ', jsonify(store.get_all_products()))
     return jsonify(store.get_all_products())
