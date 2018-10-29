@@ -9,7 +9,15 @@ products = [
     
 ]
 
-sales = []
+sales = [
+    {
+        'id' : 'dummySaleId',
+        'product_id' : 'dummy id',
+        'sold_quantity' : 'dummy curr_quantity',
+        'price' : 'dummy product price * sold_quantity'
+    }
+
+]
 
 class Store(object):
     def __init__(self):
@@ -35,3 +43,6 @@ class Store(object):
 
     def get_all_products(self):
         return products
+
+    def get_all_sales(self):
+        return sales
