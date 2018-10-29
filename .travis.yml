@@ -9,7 +9,8 @@ install:
 
 script:
   # - py.test --cov=app/tests/v1
-  - nosetests --with-coverage --cover-package=app && coverage report
+  # - nosetests --with-coverage --cover-package=app && coverage report
+  - nosetests --with-coverage
 
 after-success:
 - coveralls
