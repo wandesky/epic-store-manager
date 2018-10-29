@@ -1,4 +1,5 @@
 # Store-manager
+[![Maintainability](https://api.codeclimate.com/v1/badges/88b4e281398dabeee3a0/maintainability)](https://codeclimate.com/github/wandesky/epic-store-manager/maintainability)
 ## Introduction
 Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
 
