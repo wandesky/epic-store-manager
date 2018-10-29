@@ -1,11 +1,14 @@
-from flask import Flask, Blueprint, jsonify
-from app.api.v1.models.products import products_model
+from flask import Flask, Blueprint, jsonify, request
+# from app.api.v1.models.products import products_model
+from app.api.v1.models.store_model import Store
 products = Blueprint('products', __name__)
 
 @products.route('/')
-def hello():
-    return "This is the hello world application"
+def welcome():
+    return "This is the store manager application"
 
-@products.route('/sales')
-def get_all_sales():
-    return jsonify(sales_model)
+@products.route('/products', methods = ['GET'])
+def get_all_products():
+    store = Store()
+    print('All products: ', jsonify(store.get_all_products()))
+    return jsonify(store.get_all_products())
