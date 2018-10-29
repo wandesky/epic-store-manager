@@ -1,8 +1,6 @@
 # Store-manager
 [![Maintainability](https://api.codeclimate.com/v1/badges/88b4e281398dabeee3a0/maintainability)](https://codeclimate.com/github/wandesky/epic-store-manager/maintainability)
-
 [![Build Status](https://travis-ci.com/wandesky/epic-store-manager.svg?branch=ch-add-travis-pure-161532711)](https://travis-ci.com/wandesky/epic-store-manager)
-
 [![Coverage Status](https://coveralls.io/repos/github/wandesky/epic-store-manager/badge.svg?branch=ch-add-travis-pure-161532711)](https://coveralls.io/github/wandesky/epic-store-manager?branch=ch-add-travis-pure-161532711)
 ## Introduction
 Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
