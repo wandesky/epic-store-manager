@@ -16,33 +16,34 @@ sales = [
         'sold_quantity' : 'dummy curr_quantity',
         'price' : 'dummy product price * sold_quantity'
     }
-
 ]
 
 class Store(object):
-    def __init__(self):
-        pass
-
-# class ClassName(object):
-#     def __init__(self, *args):
-#         super(ClassName, self).__init__(*args))
-
-    # def make_sale():
-    #        pass
-        
-    # def create_product(self, id, name, curr_quantity, min_quantity, price, category):
-    #     product ={
-    #         'id' : id,
-    #         'name' : name,
-    #         'curr_quantity' : curr_quantity,
-    #         'min_quantity' : min_quantity,
-    #         'price' : price,
-    #         }
-    #     products.append(product)
-    #     return "product successfully added"
+    sales = [
+        {
+            'id' : 'dummySaleId',
+            'product_id' : 'dummy id',
+            'sold_quantity' : 'dummy curr_quantity',
+            'price' : 'dummy product price * sold_quantity'
+        }
+    ]
+    def __init__(self, store_id = None):
+        self.store_id = store_id
 
     def get_all_products(self):
         return products
 
     def get_all_sales(self):
         return sales
+    
+    def post_sale(self):
+        sales.append(self)
+        # try:
+        #     if len(sales)>1:
+        #         return "success"
+        #     else:
+        #         return "fail"
+        if len(sales)>1:
+            return "success"
+        else:
+            return "fail"
