@@ -9,8 +9,11 @@ def hello():
 
 @sales.route('/sales', methods = ['GET'])
 def get_all_sales():
-    # store = Store()
-    return jsonify(Store.get_all_sales())
+    all_sales = Store.get_all_sales()
+    if all_sales:
+        return jsonify(all_sales)
+    else:
+        return "The sale records are empty"
 
 @sales.route('/sales', methods = ['POST'])
 def post_sale():
@@ -24,8 +27,8 @@ def post_sale():
 
     #creating sale object
     sale = Sale(sale_id, product_id, quantity_sold, amount)
-    store = Store()
-    response = store.post_sale()
+    # store = Store()
+    response = sale.post_sale()
     if response == 'success':
         return 'sale transaction successfully processed', 201
     else:

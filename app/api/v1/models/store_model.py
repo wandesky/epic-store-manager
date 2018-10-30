@@ -1,49 +1,37 @@
-products = [
-    {
-        'id' : 'dummyId',
-        'name' : 'dummy name',
-        'curr_quantity' : 'dummy curr_quantity',
-        'min_quantity' : 'dummy min_quantity',
-        'price' : 'dummy price'
-    }
-    
-]
-
-sales = [
-    {
-        'id' : 'dummySaleId',
-        'product_id' : 'dummy id',
-        'sold_quantity' : 'dummy curr_quantity',
-        'price' : 'dummy product price * sold_quantity'
-    }
-]
-
 class Store(object):
-    sales = [
+    #sales is a list of objects, each object storing information about an atomic sale
+    sales = []
+    products = [
         {
-            'id' : 'dummySaleId',
-            'product_id' : 'dummy id',
-            'sold_quantity' : 'dummy curr_quantity',
-            'price' : 'dummy product price * sold_quantity'
+            'id' : 'dummyId',
+            'name' : 'dummy name',
+            'curr_quantity' : 'dummy curr_quantity',
+            'min_quantity' : 'dummy min_quantity',
+            'price' : 'dummy price'
         }
+        
     ]
+
     def __init__(self, store_id = None):
         self.store_id = store_id
 
     def get_all_products(self = None):
-        return products
+        return Store.products
 
     def get_all_sales(self = None):
-        return sales
+        return Store.sales
     
     def post_sale(self):
-        sales.append(self)
-        # try:
-        #     if len(sales)>1:
-        #         return "success"
-        #     else:
-        #         return "fail"
-        if len(sales)>1:
+        prev_len = len(Store.sales)
+        Store.sales.append(
+            {
+                "sale_id": self.store_id,
+                "product_id": self.product_id,
+                "quantity_sole": self.quantity_sold,
+                "amount": self.amount
+            }
+        )
+        if len(Store.sales)>prev_len:
             return "success"
         else:
             return "fail"
