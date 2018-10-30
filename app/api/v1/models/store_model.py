@@ -24,8 +24,6 @@ class Store(object):
         )
         if len(Store.sales)>prev_len:
             return "success"
-        else:
-            return "fail"
 
     def post_product(self):
         prev_len = len(Store.products)
@@ -41,5 +39,3 @@ class Store(object):
         )
         if len(Store.products)>prev_len:
             return "success"
-        else:
-            return "fail"
