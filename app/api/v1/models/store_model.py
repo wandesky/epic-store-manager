@@ -1,16 +1,7 @@
 class Store(object):
     #sales is a list of objects, each object storing information about an atomic sale
     sales = []
-    products = [
-        {
-            'id' : 'dummyId',
-            'name' : 'dummy name',
-            'curr_quantity' : 'dummy curr_quantity',
-            'min_quantity' : 'dummy min_quantity',
-            'price' : 'dummy price'
-        }
-        
-    ]
+    products = []
 
     def __init__(self, store_id = None):
         self.store_id = store_id
@@ -32,6 +23,23 @@ class Store(object):
             }
         )
         if len(Store.sales)>prev_len:
+            return "success"
+        else:
+            return "fail"
+
+    def post_product(self):
+        prev_len = len(Store.products)
+        Store.products.append(
+            {
+                "product_id": self.store_id,
+                "name": self.name,
+                "curr_qty": self.curr_qty,
+                "min_qty": self.min_qty,
+                "price": self.price,
+                "category": self.category
+            }
+        )
+        if len(Store.products)>prev_len:
             return "success"
         else:
             return "fail"

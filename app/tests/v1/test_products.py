@@ -1,5 +1,6 @@
 import unittest
 from app import app
+import json
 
 class TestSale(unittest.TestCase):
     '''Tests fetching of all products'''
@@ -12,7 +13,27 @@ class TestSale(unittest.TestCase):
         self.response = app.test_client().get('/api/v1/products/<productId>')
         pass
 
+
+# "product_id": self.product_id,
+# "name": self.name,
+# "curr_qty": self.curr_qty,
+# "min_qty": self.min_qty,
+# "price": self.price
+
     '''Tests creation of a new product'''
     def test_post_product(self):
-        self.response = app.test_client().post('/api/v1/products')
-        pass
+        self.response = app.test_client().post(
+            '/api/v1/products',
+            data=json.dumps(
+                dict(
+                    product_id = 'x',
+                    name = 'matchbox',
+                    curr_qty = '5',
+                    min_qty = '5',
+                    price = '5',
+                    category = 'household items'
+                )
+            ),
+            content_type='application/json'
+        )
+        self.assertEqual(self.response.status_code, 201)
