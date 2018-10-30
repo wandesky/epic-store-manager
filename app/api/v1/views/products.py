@@ -9,5 +9,5 @@ def welcome():
 
 @products.route('/products', methods = ['GET'])
 def get_all_products():
-    store = Store()
-    return jsonify(store.get_all_products())
+    # store = Store()
+    return jsonify(Store.get_all_products())

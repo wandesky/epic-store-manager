@@ -9,8 +9,8 @@ def hello():
 
 @sales.route('/sales', methods = ['GET'])
 def get_all_sales():
-    store = Store()
-    return jsonify(store.get_all_sales())
+    # store = Store()
+    return jsonify(Store.get_all_sales())
 
 @sales.route('/sales', methods = ['POST'])
 def post_sale():

@@ -30,10 +30,10 @@ class Store(object):
     def __init__(self, store_id = None):
         self.store_id = store_id
 
-    def get_all_products(self):
+    def get_all_products(self = None):
         return products
 
-    def get_all_sales(self):
+    def get_all_sales(self = None):
         return sales
     
     def post_sale(self):
