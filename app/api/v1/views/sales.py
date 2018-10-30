@@ -20,7 +20,8 @@ def post_sale():
     
     #reading the request
     req_data = request.get_json()
-    sale_id = req_data['sale_id']
+    # sale_id = req_data['sale_id']
+    sale_id = "S" + str(len(Store.sales) + 1)
     product_id = req_data['product_id']
     quantity_sold = req_data['quantity_sold']
     amount = req_data['amount']
