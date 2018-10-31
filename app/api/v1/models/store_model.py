@@ -9,6 +9,12 @@ class Store(object):
     def get_all_products(self = None):
         return Store.products
 
+    def get_specific_product(productId):
+        print("The product ID is", productId)
+        result = next((product for product in Store.products if product["product_id"] == str(productId)), {"message": "Item not found"})
+        print("@@@@@@@@@@@@@@@@@@@@RESULT@@@@@@@@@@@@@@", result)
+        return result
+
     def get_all_sales(self = None):
         return Store.sales
     

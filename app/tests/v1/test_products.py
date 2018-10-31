@@ -9,16 +9,9 @@ class TestSale(unittest.TestCase):
         self.assertEqual(self.response.status_code, 200)
 
     '''Tests fetching of specific products'''
-    def test_get_specific_products(self):
-        self.response = app.test_client().get('/api/v1/products/<productId>')
-        pass
-
-
-# "product_id": self.product_id,
-# "name": self.name,
-# "curr_qty": self.curr_qty,
-# "min_qty": self.min_qty,
-# "price": self.price
+    def test_get_specific_product(self):
+        self.response = app.test_client().get('/api/v1/products/P1')
+        self.assertEqual(self.response.status_code, 200)
 
     '''Tests creation of a new product'''
     def test_post_product(self):

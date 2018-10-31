@@ -9,8 +9,16 @@ def welcome():
 
 @products.route('/products', methods = ['GET'])
 def get_all_products():
-    # store = Store()
     return jsonify(Store.get_all_products())
+
+@products.route('/products/<productId>', methods = ['GET'])
+def get_specific_product(productId):
+    response = Store.get_specific_product(productId)
+    print("RESPONSE ", response)
+    if(response):
+        return jsonify(response), 200
+    return jsonify({"message": "a product with that ID was not found"}), 200
+
 
 @products.route('/products', methods = ['POST'])
 def post_product():
