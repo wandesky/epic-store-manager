@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.com/wandesky/epic-store-manager.svg?branch=ch-add-travis-pure-161532711)](https://travis-ci.com/wandesky/epic-store-manager)
 [![Coverage Status](https://coveralls.io/repos/github/wandesky/epic-store-manager/badge.svg?branch=ch-add-travis-pure-161532711)](https://coveralls.io/github/wandesky/epic-store-manager?branch=ch-add-travis-pure-161532711)
 
-[![Run in Postman - Heroku](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/10603920350da8c05494)
-[![Run in Postman - Localhost](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/39428fe334c131564a1e)
+[![Postman:Heroku](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/10603920350da8c05494)
+[![Postman:Localhost](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/39428fe334c131564a1e)
 ## Introduction
 Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
 
