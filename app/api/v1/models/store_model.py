@@ -49,20 +49,8 @@ class Store(object):
     def update_product(productId, qty):
         result = next((product for product in Store.products if product["product_id"] == str(productId)), {"message": "Item not found"})
         print("THE RESULT ################### #", result, "PRODUCT ID #######", productId, "QUANTITY ", qty)
-        result["curr_qty"] = str(int(result["curr_qty"]) - int(qty))
+        result["curr_qty"] = str(int(result["curr_qty"]) + int(qty))
+        # Even though the above code works, the one below seems more effecient
+        # for d in my_dicts:
+        #     d.update((k, "value3") for k, v in d.iteritems() if k == str(productId))
         return "success"
-        
-        
-        # prev_len = len(Store.products)
-        # Store.products.append(
-        #     {
-        #         "product_id": self.store_id,
-        #         "name": self.name,
-        #         "curr_qty": self.curr_qty,
-        #         "min_qty": self.min_qty,
-        #         "price": self.price,
-        #         "category": self.category
-        #     }
-        # )
-        # if len(Store.products)>prev_len:
-        #     return "success"
