@@ -30,3 +30,22 @@ class TestSale(unittest.TestCase):
             content_type='application/json'
         )
         self.assertEqual(self.response.status_code, 201)
+
+    '''Tests updating of specific products'''
+    def test_update_specific_product(self):
+        app.test_client().post(
+            '/api/v1/products',
+            data=json.dumps(
+                dict(
+                    product_id = 'x',
+                    name = 'matchbox',
+                    curr_qty = '5',
+                    min_qty = '5',
+                    price = '5',
+                    category = 'household items'
+                )
+            ),
+            content_type='application/json'
+        )
+        self.response = app.test_client().put('/api/v1/products?id=P1&qty=1')
+        self.assertEqual(self.response.status_code, 204)
