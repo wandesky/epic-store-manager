@@ -35,7 +35,7 @@ def post_sale():
         try:
             Store.update_product(product_id, -(int(quantity_sold)))
         except:
-            print ("No such record")
+            print ("No such record-temp error message")
         return 'sale transaction successfully processed', 201
     else:
         return 'the sale transaction did not go through, possible invalid request', 400
