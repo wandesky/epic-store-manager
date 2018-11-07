@@ -32,7 +32,7 @@ class TestSale(unittest.TestCase):
         self.assertEqual(self.response.status_code, 201)
 
     '''Tests updating of specific products'''
-    def test_get_specific_product(self):
+    def test_update_specific_product(self):
         app.test_client().post(
             '/api/v1/products',
             data=json.dumps(

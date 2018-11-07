@@ -31,6 +31,11 @@ def post_sale():
     # store = Store()
     response = sale.post_sale()
     if response == 'success':
+        #update the records of the products by substracting sold qty
+        try:
+            Store.update_product(product_id, -(int(quantity_sold)))
+        except:
+            print ("No such record")
         return 'sale transaction successfully processed', 201
     else:
         return 'the sale transaction did not go through, possible invalid request', 400
